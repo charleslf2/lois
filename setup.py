@@ -9,11 +9,14 @@ classifiers=[
 
 setup(
     name="lois",
-    version="0.0.6",
+    version="0.0.7",
     description="the fastest and easy way to get insight of your dataset",
     long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type='text/markdown',
     url="https://github.com/charleslf2/lois.git",
+    project_urls={
+        "Bug Tracker":"https://github.com/charleslf2/lois/issues"
+    },
     author="Charles TCHANAKE",
     author_email="datadevfernolf@gmail.com",
     license="MIT",
