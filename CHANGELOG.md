@@ -20,3 +20,10 @@ Change Log
 
 - Finishing the "Background analysis"
 - build the package
+
+0.0.9(11/10/2022)
+- try to fix correlation function problem
+
+0.1.0(11/10/2022)
+- remove correlation function for now
+

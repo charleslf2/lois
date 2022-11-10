@@ -1,4 +1,4 @@
-# verison 0.0.8
+# verison 0.1.0
 
 # import usefull package 
 
@@ -265,7 +265,7 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         # correlation between float and integer variables
 
         console.print("-------------------- CORRELATION BETWEEN FLOAT AND INTEGER VARIABLES --------------------", justify="center")
-        print(Panel.fit(f"{data.corr(numeric_only=True)}", title="The correlation", title_align="center"))
+        #print(Panel.fit(f"{data.corr()}", title="The correlation", title_align="center"))
         plt.figure(figsize=(6,6))
         plt.title("Correlation between variables")
         sns.heatmap(data.corr())

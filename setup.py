@@ -9,7 +9,7 @@ classifiers=[
 
 setup(
     name="lois",
-    version="0.0.8",
+    version="0.1.0",
     description="the fastest and easy way to get insight of your dataset",
     long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type='text/markdown',
