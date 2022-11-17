@@ -22,8 +22,17 @@ Change Log
 - build the package
 
 0.0.9(11/10/2022)
+-----------------
 - try to fix correlation function problem
 
 0.1.0(11/10/2022)
+-----------------
 - remove correlation function for now
+
+0.2.0(11/17/2022)
+-----------------
+- put correlation number on correlation chart 
+- change pairpot by barplot (for numerical vaqriable)
+- fix target bool bug
+
 

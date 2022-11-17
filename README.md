@@ -21,12 +21,14 @@ pip install lois
 ```
 ### Usage
 ```python
-
+# Import packages
 >>> import pandas as pd
 >>> from lois import lois_ds_report
+#Import your dataset
 >>> data=pd.read_csv("your data path")
+#Simple report with lois
 >>> lois_ds_report(data,target_variable="gender", report_complexity="simple" )
-
+#Advanced report with lois
 >>> lois_ds_report(data, target_variable="gender", report_complexity="advanced")
 
 ```

@@ -1,3 +1,5 @@
 dist/
 lois.egg-info/
 /todo.py
+public/
+lois_rsc/

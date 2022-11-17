@@ -1,4 +1,4 @@
-# verison 0.1.0
+# verison 0.2.0
 
 # import usefull package 
 
@@ -221,10 +221,12 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         print(type_target_var)
         if type_target_var == 'object':
             stat_target_var=data[target_variable].value_counts()
+            pd.set_option('display.max_column', data.shape[1])
+            pd.set_option('display.max_row', data.shape[1])
             print(Panel.fit(f"{stat_target_var}", title="Target variable count output", title_align="center"))
             fig=plt.figure(figsize=(4,4))
             fig.suptitle("Visualize your target variable")
-            data[target_variable].value_counts().plot.pie()
+            stat_target_var.plot.pie()
             plt.show()
         if type_target_var == 'float':
             plt.figure(figsize=(4,4))
@@ -268,14 +270,19 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         #print(Panel.fit(f"{data.corr()}", title="The correlation", title_align="center"))
         plt.figure(figsize=(6,6))
         plt.title("Correlation between variables")
-        sns.heatmap(data.corr())
+        sns.heatmap(data.corr(), annot=True)
         plt.show()
 
         #################################################################################################
-        console.print("-------------------- YOUR DATASET IN ONE  PLOTS --------------------", justify="center")
-        fig=plt.figure()
-        fig.suptitle("Your pairplot")
-        sns.pairplot(data)
+        #console.print("-------------------- YOUR DATASET IN ONE  PLOTS --------------------", justify="center")
+        #fig=plt.figure()
+        #fig.suptitle("Your pairplot")
+        #sns.pairplot(data)
+        #plt.show()
+
+        ##################################################################################################
+        console.print("-------------------- PLOT ALL NUMERICAL VARIABLES --------------------", justify="center")
+        data.hist(bins=50, figsize=(20,15))
         plt.show()
 
 
