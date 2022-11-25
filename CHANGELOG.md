@@ -35,4 +35,7 @@ Change Log
 - change pairpot by barplot (for numerical vaqriable)
 - fix target bool bug
 
+0.3.0(11/25/2022)
+-------------------
+- adding downloads statistics
 

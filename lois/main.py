@@ -1,4 +1,4 @@
-# verison 0.2.0
+# verison 0.3.0
 
 # import usefull package 
 
@@ -204,7 +204,7 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         back_analysis_tree.add("Analyze the float variables")
         back_analysis_tree.add("Analyze the object variables")
         back_analysis_tree.add("The corrleation between float and integer variables")
-        back_analysis_tree.add("Your dataset in one plot ")
+        back_analysis_tree.add("Plot all numerical variables ")
      
 
         print(tree)

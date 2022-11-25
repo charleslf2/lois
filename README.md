@@ -1,3 +1,7 @@
+[![Downloads](https://pepy.tech/badge/lois)](https://pepy.tech/project/lois)
+[![Downloads](https://pepy.tech/badge/lois/month)](https://pepy.tech/project/lois)
+[![Downloads](https://pepy.tech/badge/lois/week)](https://pepy.tech/project/lois)
+
 # lois
 The fastest and easy way to get insight of your dataset
 
