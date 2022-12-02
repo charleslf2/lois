@@ -39,3 +39,6 @@ Change Log
 -------------------
 - adding downloads statistics
 
+0.0.4(12/2/2022)
+-----------------
+-fix some typing error

@@ -1,4 +1,4 @@
-# verison 0.3.0
+# verison 0.4.0
 
 # import usefull package 
 
@@ -26,16 +26,16 @@ console = Console()
 def lois_ds_report(data, target_variable:str, report_complexity="simple"):
 
     """
-    lois_report generate clean and insightful data science report based on your params
+    lois_ds_report generate clean and insightful data science report based on your params
 
-    Prams:
+    Params:
     -----
 
     . data (df|required) = Should be pandas dataframe
 
-    .target_variable("str"|required) = The target variable of your dataset (should be the same as in your dataset)
+    .target_variable(str|required) = The target variable of your dataset (should be the same as in your dataset)
 
-    . report_complexity ("str"|default ="simple" or "advanced") = Indicate the level  of details  of the report 
+    . report_complexity (str|default ="simple" or "advanced") = Indicate the level  of details  of the report 
 
     Usages:
     ------
