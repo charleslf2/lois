@@ -10,19 +10,16 @@ from rich.theme import Theme
 from rich import print
 from rich.panel import Panel
 from rich.tree import Tree
-#from rich.console import group
 from rich.table import Table
 import matplotlib.pyplot as plt 
 import seaborn as sns
 
-## custom theme
-custom_theme=Theme({"warning":"red"})
 
 install()
 console = Console()
 
 
-
+#==================================================================================
 def lois_ds_report(data, target_variable:str, report_complexity="simple"):
 
     """
@@ -44,16 +41,15 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
     >>> lois_ds_report(data, target_variable="gender", report_complexity="simple")
     """
 
+#========================================================================================
     def simple_analytics():
 
-
-        ####################################################################################################################
         # the title
 
         console.print(Panel(" ", title="Exploratory Data Anlysis" ,subtitle="EDA|simple| Suitable for data scientist",
                         title_align="center", subtitle_align="center") )
 
-        ####################################################################################################################
+
         # the report tree summary
 
         tree=Tree("Shape Analysis", guide_style="bold")
@@ -76,7 +72,7 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
 
         print(Panel("", title="DATASET SHAPE ANALYSIS", title_align="center",expand=True))
 
-        ####################################################################################################################
+       
         # The dataset head
         #TODO data head display
 
@@ -100,18 +96,18 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         console.print(table)
 
 
-        ####################################################################################################################
+
         # Some general info about dataset
         console.print("-------------------- SOME GENERAL INFO ABOUT YOUR DATASET --------------------", justify="center")
         data.info()
 
-        #######################################################################################################################
+
         # the target variable 
 
         console.print("-------------------- THE TARGET VARIABLE OF YOUR DATASET --------------------", justify="center")
         print(Panel.fit(f"The Target variable is : '{target_variable}' "))
 
-        ####################################################################################################################
+        
         # the shape of dataset
 
         console.print("-------------------- ROWS AND COLUMNS IN YOUR DATASET --------------------", justify="center")    
@@ -125,7 +121,7 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         print(Panel.fit(f"Your dataset contains {row} Rows and {columns} Columns"))
 
 
-        ####################################################################################################################
+        
         # data types
 
         console.print("-------------------- THE DATA TYPES IN YOUR DATASET --------------------", justify="center")
@@ -142,7 +138,7 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         data.dtypes.value_counts().plot.pie()
         plt.show()
 
-        ####################################################################################################################
+       
         # misisng value
 
         console.print("-------------------- MISSING VALUE IN YOUR DATASET --------------------", justify="center")
@@ -168,33 +164,16 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
 
         console.print("#################### END ####################", justify="center")
 
-        ####################################################################################################################
-        ####################################################################################################################
-        ####################################################################################################################
-
-
-
-
-
-
-
-
-
-        ####################################################################################################################
-        ####################################################################################################################
-        ####################################################################################################################
-
+#==================================================================================================================
     def advanced_analysis():
 
-        ####################################################################################################################
+       
         # the title
 
         console.print(Panel(" ", title="Exploratory Data Anlysis" ,subtitle="EDA|advanced| Suitable for data scientist",
                         title_align="center", subtitle_align="center") )
 
-        ####################################################################################################################
         
-        ####################################################################################################################
         # the report tree summary
 
         tree=Tree("Background Analysis", guide_style="bold")
@@ -212,7 +191,7 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
 
         print(Panel("", title="DATASET BACKGROUND ANALYSIS", title_align="center",expand=True))
 
-        ####################################################################################################################
+       
 
         # analyze the target variable
         console.print("-------------------- ANALYZE THE TARGET VARIABLE --------------------", justify="center")
@@ -245,25 +224,26 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
             fig.suptitle("Visualize your target variable")
             data[target_variable].value_counts().plot.pie()
             plt.show()
-        ####################################################################################################################
+       
+
         # analyze the float variables
         console.print("-------------------- ANALYZE THE FLOAT VARIABLES --------------------", justify="center")
         
         for col in data.select_dtypes("float"):
             print(Panel.fit(f"{data[col].describe()}", title="Float variables" ,title_align="center"))
 
-        ####################################################################################################################
+        
         # analyze the object variables
         console.print("-------------------- ANALYZE THE OBJET VARIABLES --------------------", justify="center")
         for col in data.select_dtypes("object"):
             print(Panel.fit(f"{col :-<40} {data[col].unique()}", title="Object variables unique value" ,title_align="center"))
 
-        ####################################################################################################################
+        
         # analyze the object variables
         console.print("-------------------- ANALYZE THE INTEGER VARIABLES --------------------", justify="center")
         for col in data.select_dtypes("int64"):
             print(Panel.fit(f"{data[col].describe()}", title="Integer variables" ,title_align="center"))
-        #################################################################################################
+        
         # correlation between float and integer variables
 
         console.print("-------------------- CORRELATION BETWEEN FLOAT AND INTEGER VARIABLES --------------------", justify="center")
@@ -273,20 +253,13 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
         sns.heatmap(data.corr(), annot=True)
         plt.show()
 
-        #################################################################################################
-        #console.print("-------------------- YOUR DATASET IN ONE  PLOTS --------------------", justify="center")
-        #fig=plt.figure()
-        #fig.suptitle("Your pairplot")
-        #sns.pairplot(data)
-        #plt.show()
 
-        ##################################################################################################
         console.print("-------------------- PLOT ALL NUMERICAL VARIABLES --------------------", justify="center")
         data.hist(bins=50, figsize=(20,15))
         plt.show()
 
 
-        #################################################################################################
+
 
         console.print("#################### END ####################", justify="center")
 
