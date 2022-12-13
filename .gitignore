@@ -4,6 +4,6 @@ build/
 /todo.py
 public/
 lois_rsc/
-lenv/
 .ipynb_checkpoints/
 /test.ipynb
+lenv/

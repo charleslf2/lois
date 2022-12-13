@@ -1,4 +1,4 @@
-# verison 0.4.0
+# verison 0.5.0
 
 # import usefull package 
 
@@ -248,7 +248,7 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
 
         console.print("-------------------- CORRELATION BETWEEN FLOAT AND INTEGER VARIABLES --------------------", justify="center")
         #print(Panel.fit(f"{data.corr()}", title="The correlation", title_align="center"))
-        plt.figure(figsize=(6,6))
+        plt.figure(figsize=(20, 10))
         plt.title("Correlation between variables")
         sns.heatmap(data.corr(), annot=True)
         plt.show()
@@ -280,13 +280,5 @@ def lois_ds_report(data, target_variable:str, report_complexity="simple"):
     # the target variable
     if target_variable ==None :
         raise Warning("The report will be limited if you don't pass any target variable")
-
-
-  
-   
-
-
-    
-
 
 

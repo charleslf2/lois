@@ -42,3 +42,7 @@ Change Log
 0.4.0(12/2/2022)
 -----------------
 -fix some typing error
+
+0.5.0(12/13/2022)
+------------------
+-fix correlation display
